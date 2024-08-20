@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
 import Logo from "@/components/Logo";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ThemeSwitcher from "@/components/ThemeSwitcher"; // Ensure this import remains
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,10 +30,10 @@ export default function RootLayout({
             <nav className="flex justify-between items-center border-b border-border h-[60px] px-4 py-2">
               <Logo />
               <div className="flex gap-4 items-center">
-                <ThemeSwitcher />
+                {/* Add the key prop to ThemeSwitcher */}
+                <ThemeSwitcher key="theme-switcher" />
               </div>
             </nav>
-            {/* Render the page content here */}
             {children}
           </div>
         </ThemeProvider>
